@@ -1,0 +1,16 @@
+name: 'Web Pre-Processor'
+description: 'Provides tools for processin style and js minifying using styl and uglify'
+inputs:
+  action:
+    description: 'uglifyjs or styl or combine'
+    default: 'uglifyjs'
+  filenames:
+    description: 'input file {string} or files {array<string>}'
+    required: true
+  output: 
+    description: 'Output file'
+    required: true
+
+runs:
+  using: 'node16'
+  main: 'index.js'

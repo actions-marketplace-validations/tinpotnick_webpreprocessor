@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "test": "./node_modules/mocha/bin/_mocha test/**/*.spec.js --check-leaks"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1",
+    "chai": "^4.3.7",
+    "mocha": "^10.1.0",
+    "stylus": "^0.59.0",
+    "uglify-js": "^3.17.4"
+  }
+}
