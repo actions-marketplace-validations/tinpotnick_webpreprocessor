@@ -5,7 +5,8 @@ inputs:
     description: 'uglifyjs or styl or combine'
     default: 'uglifyjs'
   filename:
-    description: 'input file {string} or files {array<string>}'
+    description: 'input file {string} or comma delimitered file (depending on action)'
+    required: true
   output: 
     description: 'Output file'
   regexes:

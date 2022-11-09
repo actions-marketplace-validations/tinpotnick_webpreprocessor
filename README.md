@@ -13,8 +13,8 @@ I needed a couple of tools under the same bracket so thought I'll write a custom
 ```yaml
 uses: actions/webpreprocessor@v1.0
 with:
-  action: 'uglifyjs'
-  filename: [ 'in1.js', 'in2.js' ]
+  action: uglifyjs
+  filename: in1.js,in2.js
 ```
 
 ## Stylus
@@ -23,8 +23,8 @@ with:
 ```yaml
 uses: actions/webpreprocessor@v1.0
 with:
-  action: 'styl'
-  filename: [ 'in1.styl', 'in2.styl' ]
+  action: styl
+  filename: in1.styl,in2.styl
 ```
 
 OR
@@ -32,9 +32,9 @@ OR
 ```yaml
 uses: actions/webpreprocessor@v1.0
 with:
-  action: 'styl'
-  filename: 'in1.styl'
-  output: 'out.css'
+  action: styl
+  filename: in1.styl
+  output: out.css
 ```
 
 
@@ -43,9 +43,9 @@ with:
 ```yaml
 uses: actions/webpreprocessor@v1.0
 with:
-  action: 'combine'
-  filename: [ 'in1.js', 'in2.js' ]
-  output: 'combined.js'
+  action: combine
+  filename: in1.js,in2.js
+  output: combined.js
 ```
 
 ## Replace
@@ -56,8 +56,8 @@ Replace a string ina file with another string.
 ```yaml
 uses: actions/webpreprocessor@v1.0
 with:
-  action: 'replace'
-  filename: 'index.html'
-  regexs: [ 'combined.js' ]
-  replaces: [ 'world' ]
+  action: replace
+  filename: index.html
+  regexs: combined.js
+  replaces: world
 ```
