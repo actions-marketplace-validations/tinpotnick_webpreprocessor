@@ -14,7 +14,7 @@ I needed a couple of tools under the same bracket so thought I'll write a custom
 uses: actions/webpreprocessor@v1.0
 with:
   action: 'uglifyjs'
-  filenames: [ 'in1.js', 'in2.js' ]
+  filename: [ 'in1.js', 'in2.js' ]
 ```
 
 ## Stylus
@@ -24,7 +24,7 @@ with:
 uses: actions/webpreprocessor@v1.0
 with:
   action: 'styl'
-  filenames: [ 'in1.styl', 'in2.styl' ]
+  filename: [ 'in1.styl', 'in2.styl' ]
 ```
 
 OR
@@ -33,7 +33,7 @@ OR
 uses: actions/webpreprocessor@v1.0
 with:
   action: 'styl'
-  filenames: 'in1.styl'
+  filename: 'in1.styl'
   output: 'out.css'
 ```
 
@@ -44,7 +44,7 @@ with:
 uses: actions/webpreprocessor@v1.0
 with:
   action: 'combine'
-  filenames: [ 'in1.js', 'in2.js' ]
+  filename: [ 'in1.js', 'in2.js' ]
   output: 'combined.js'
 ```
 

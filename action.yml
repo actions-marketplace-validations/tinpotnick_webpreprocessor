@@ -4,12 +4,14 @@ inputs:
   action:
     description: 'uglifyjs or styl or combine'
     default: 'uglifyjs'
-  filenames:
+  filename:
     description: 'input file {string} or files {array<string>}'
-    required: true
   output: 
     description: 'Output file'
-    required: true
+  regexes:
+    description: 'Array used for replace function'
+  replaces:
+    description: 'Array of replacement strings on matches'
 
 runs:
   using: 'node16'

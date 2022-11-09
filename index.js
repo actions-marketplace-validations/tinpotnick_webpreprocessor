@@ -11,7 +11,7 @@ try {
   const action = core.getInput( "action" )
   switch( action ) {
     case "uglifyjs": {
-      const inputfile = core.getInput( "filenames" )
+      const inputfile = core.getInput( "filename" )
       if( Array.isArray( inputfile ) ) {
         inputfile.forEach( ( f ) =>  utils.runuglify( f ) )
         return
@@ -22,7 +22,7 @@ try {
     }
 
     case "styl": {
-      const inputfile = core.getInput( "filenames" )
+      const inputfile = core.getInput( "filename" )
       const outputfile = core.getInput( "output" )
       if( Array.isArray( inputfile ) ) {
         inputfile.forEach( ( f ) =>  utils.runstylus( f ) )
@@ -34,7 +34,7 @@ try {
     }
 
     case "combine": {
-      const inputfile = core.getInput( "filenames" )
+      const inputfile = core.getInput( "filename" )
       const outputfile = core.getInput( "output" )
       if( !Array.isArray( inputfile ) ) {
         core.setFailed( "Combining files filenames must be an array" )
