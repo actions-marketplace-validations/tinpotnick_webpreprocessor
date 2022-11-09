@@ -11,7 +11,7 @@ I needed a couple of tools under the same bracket so thought I'll write a custom
 ## Minify
 
 ```yaml
-uses: actions/webpreprocessor@v1.2
+uses: actions/webpreprocessor@v<version>
 with:
   action: uglifyjs
   filename: in1.js,in2.js
@@ -21,7 +21,7 @@ with:
 
 
 ```yaml
-uses: actions/webpreprocessor@v1.2
+uses: actions/webpreprocessor@v<version>
 with:
   action: styl
   filename: in1.styl,in2.styl
@@ -30,7 +30,7 @@ with:
 OR
 
 ```yaml
-uses: actions/webpreprocessor@v1.2
+uses: actions/webpreprocessor@v<version>
 with:
   action: styl
   filename: in1.styl
@@ -41,7 +41,7 @@ with:
 ## Combine
 
 ```yaml
-uses: actions/webpreprocessor@v1.2
+uses: actions/webpreprocessor@v<version>
 with:
   action: combine
   filename: in1.js,in2.js
@@ -54,10 +54,10 @@ Replace a string in a file with another string.
 
 
 ```yaml
-uses: actions/webpreprocessor@v1.2
+uses: actions/webpreprocessor@v<version>
 with:
   action: replace
   filename: index.html
-  regexs: combined.js
+  regexes: combined.js
   replaces: world
 ```
