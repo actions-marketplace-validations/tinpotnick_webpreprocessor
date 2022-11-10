@@ -16,7 +16,7 @@ describe( "preprocessor", function() {
 
   describe( "style", function() {
     it( "runstylus", async function() {
-      utils.runstylus( "test/interface/test.styl", "test/interface/test.css" )
+      utils.runstylus( "test/interface/test.styl" )
       expect( fs.readFileSync( "test/interface/test.css", { encoding: "utf8", flag: "r" } ) ).to.equal( `body {\n  color: #fff;\n}\n` )
     } )
   } )

@@ -7,6 +7,8 @@ inputs:
   filename:
     description: 'input file {string} or comma delimitered file (depending on action)'
     required: true
+  dir:
+    description: 'optional to set a working directory'
   output: 
     description: 'Output file'
   regexes:
