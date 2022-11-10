@@ -13,6 +13,7 @@ I needed a couple of tools under the same bracket so thought I'll write a custom
 ```yaml
 uses: actions/webpreprocessor@v<version>
 with:
+  dir: /yourworkingdirector
   action: uglifyjs
   filename: in1.js,in2.js
 ```
@@ -61,3 +62,10 @@ with:
   regexes: combined.js
   replaces: world
 ```
+
+# Release notes
+
+npm test
+git commit...
+git tag -a -m "npm update" v<version>
+git push --follow-tags

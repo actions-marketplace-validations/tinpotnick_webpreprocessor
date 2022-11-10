@@ -3,6 +3,7 @@ const expect = require( "chai" ).expect
 const utils = require( "../../lib/utils" )
 
 const fs = require( "fs" )
+const os = require( "os" )
 
 describe( "preprocessor", function() {
 
@@ -26,6 +27,16 @@ describe( "preprocessor", function() {
       utils.combinefiles( [ "test/interface/uglifyme.js", "test/interface/small.js" ], "test/interface/combined.js" )
       expect( fs.readFileSync( "test/interface/combined.js", { encoding: "utf8", flag: "r" } ) ).to.equal( `\n\nconsole.log( "Hello World!" )console.error("Hello World");` )
 
+    } )
+
+    it( "combine to tmp", async function() {
+      const tmp = os.tmpdir()
+
+      fs.copyFileSync( "test/interface/uglifyme.js", tmp + "/uglifyme.js" )
+      fs.copyFileSync( "test/interface/small.js", tmp + "/small.js" )
+      utils.combinefiles( [ "uglifyme.js", "small.js" ], "combined.js", os.tmpdir() )
+
+      expect( fs.readFileSync( os.tmpdir() + "/combined.js", { encoding: "utf8", flag: "r" } ) ).to.equal( `\n\nconsole.log( "Hello World!" )console.error("Hello World");` )
     } )
   } )
 
