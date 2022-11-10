@@ -62,5 +62,12 @@ describe( "preprocessor", function() {
       utils.replace( "test/interface/test.html", [ "REPLACEME", "REPLACETHISALSO" ], [ "Hello", "World" ] )
       expect( fs.readFileSync( "test/interface/test.html", { encoding: "utf8", flag: "r" } ) ).to.equal( `<head></head><body>Hello<p>World<p/></body>` )
     } )
+
+    it( "replace", async function() {
+      const filename = os.tmpdir() + "/tmp.html"
+      fs.copyFileSync( "test/interface/test2.html", filename )
+      utils.replace( filename, [ `\\*\\*EMAIL_REPLACE\\*\\*`, `\\*\\*TEL_REPLACE\\*\\*` ], [ "kermit@themuppetshow.com", "01234567890" ] )
+      //expect( fs.readFileSync( "test/interface/test.html", { encoding: "utf8", flag: "r" } ) ).to.equal( `<head></head><body>Hello<p>World<p/></body>` )
+    } )
   } )
 } )
