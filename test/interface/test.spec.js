@@ -13,6 +13,13 @@ describe( "preprocessor", function() {
       utils.runuglify( "test/interface/uglifyme.js" )
       expect( fs.readFileSync( "test/interface/uglifyme-min.js", { encoding: "utf8", flag: "r" } ) ).to.equal( `console.log("Hello World!");` )
     } )
+
+    it( "runuglify with comined combine", async function() {
+      const tmpfile = os.tmpdir() + "/ug-min.js"
+
+      utils.runuglify( [ "test/interface/uglifyme.js", "test/interface/small.js" ], undefined, tmpfile )
+      expect( fs.readFileSync( tmpfile, { encoding: "utf8", flag: "r" } ) ).to.equal( `console.log("Hello World!"),console.error("Hello World");` )
+    } )
   } )
 
   describe( "style", function() {

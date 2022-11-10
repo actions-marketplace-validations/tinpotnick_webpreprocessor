@@ -14,7 +14,13 @@ try {
   switch( action ) {
     case "uglifyjs": {
       const inputfile = core.getInput( "filename" ).split( "," )
-      inputfile.forEach( ( f ) =>  utils.runuglify( f, dir ) )
+      const outputfile = core.getInput( "output" )
+
+      if( outputfile ) {
+        utils.runuglify( inputfile, dir, outputfile )
+      } else {
+        inputfile.forEach( ( f ) =>  utils.runuglify( f, dir ) )
+      }
       return
     }
 
