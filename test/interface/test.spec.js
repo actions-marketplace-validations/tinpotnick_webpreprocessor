@@ -34,7 +34,11 @@ describe( "preprocessor", function() {
 
       fs.copyFileSync( "test/interface/uglifyme.js", tmp + "/uglifyme.js" )
       fs.copyFileSync( "test/interface/small.js", tmp + "/small.js" )
-      utils.combinefiles( [ "uglifyme.js", "small.js" ], "combined.js", os.tmpdir() )
+      try{ 
+        fs.mkdirSync( tmp + "/tst" )
+      } catch( e ) {}
+
+      utils.combinefiles( [ "uglifyme.js", "small.js" ], tmp + "/tst/combined.js", os.tmpdir() )
 
       expect( fs.readFileSync( os.tmpdir() + "/combined.js", { encoding: "utf8", flag: "r" } ) ).to.equal( `\n\nconsole.log( "Hello World!" )console.error("Hello World");` )
     } )
